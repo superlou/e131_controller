@@ -692,16 +692,14 @@
    <EndColor>4287892980</EndColor>
    <ControlMode>RGB</ControlMode>
    <FixtureGroup>0</FixtureGroup>
-   <Property Name="stepsize" Value="25"/>
    <Property Name="ramp" Value="20"/>
-   <Property Name="presetIndex" Value="Abstract"/>
    <Property Name="presetSize" Value="5"/>
+   <Property Name="presetIndex" Value="Abstract"/>
+   <Property Name="stepsize" Value="25"/>
   </Function>
   <Function ID="1" Type="Show" Name="New Show 1">
    <TimeDivision Type="Time" BPM="120"/>
-   <Track ID="0" Name="Track 1" isMute="0">
-    <ShowFunction ID="2" StartTime="0" Duration="225010" Color="#608053"/>
-   </Track>
+   <Track ID="0" Name="Track 1" isMute="0"/>
   </Function>
   <Function ID="2" Type="Audio" Name="">
    <Speed FadeIn="0" FadeOut="0" Duration="0"/>

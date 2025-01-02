@@ -9,6 +9,12 @@
 #define NUM_LEDS 60
 #define DATA_PIN 4
 
+#include "controller_config.h"
+#include "config_server.h"
+
+ControllerConfig config;
+ConfigServer config_server(&config);
+
 CRGB leds[NUM_LEDS];
 
 const char *ssid = "meta_2g4";
@@ -22,6 +28,8 @@ ESPAsyncE131 e131(UNIVERSE_COUNT);
 void setup() {
   Serial.begin(115200);
   delay(100);
+
+  config.global_brightness = 80;
 
   FastLED.addLeds<WS2812B, DATA_PIN, GRB>(leds, NUM_LEDS);
   FastLED.setDither(0);
@@ -48,10 +56,12 @@ void setup() {
   } else {
     Serial.println(F("*** e131.begin failed ***"));
   }
+
+  config_server.start();
 }
 
 void loop() {
-  uint8_t brightness = 80;
+  config_server.handle_client();
   
   while (!e131.isEmpty()) {
     e131_packet_t packet;
@@ -69,7 +79,7 @@ void loop() {
     }
   }
 
-  FastLED.setBrightness(brightness);
+  FastLED.setBrightness(config.global_brightness);
   FastLED.show();
   delay(10);
 }

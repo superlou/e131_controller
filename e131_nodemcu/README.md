@@ -9,6 +9,6 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 To build, this requires:
 
-* ESP Async E1.31
-* ESPAsyncUDP (https://github.com/me-no-dev/ESPAsyncUDP) - needs to be manually downloaded into libraries
+* [ESP Async E1.31](https://github.com/forkineye/ESPAsyncE131)
+* [ESPAsyncUDP](https://github.com/me-no-dev/ESPAsyncUDP) needs to be manually downloaded into libraries
 * FastLED
