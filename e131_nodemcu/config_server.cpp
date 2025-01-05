@@ -1,4 +1,4 @@
-#include "config_server.h"
+#include "config_server.hpp"
 
 ConfigServer::ConfigServer(ControllerConfig *config) : wifi_server(80) {
     this->config = config;
@@ -9,7 +9,7 @@ void ConfigServer::start() {
 }
 
 void ConfigServer::handle_client() {
-    WiFiClient client = wifi_server.available();
+    WiFiClient client = wifi_server.accept();
     if (!client) {
         return;
     }

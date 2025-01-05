@@ -2,7 +2,7 @@
 #define SERVER_H_
 
 #include <ESP8266WiFi.h>
-#include "controller_config.h"
+#include "controller_config.hpp"
 
 class ConfigServer {
     private:
